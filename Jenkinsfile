@@ -26,7 +26,8 @@ pipeline {
           }
           stage('check webapp rechability') {
              steps {
-                sh 'curl http://ec2-3-16-25-200.us-east-2.compute.amazonaws.com'
+                sh 'sleep 10s'
+                sh 'curl http://ec2-3-16-25-200.us-east-2.compute.amazonaws.com:9000'
              }
           }
      }
