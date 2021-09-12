@@ -21,13 +21,13 @@ pipeline {
           }
           stage('deploy to docker host') {
              steps {
-                sh 'docker -H tcp://10.1.3.231:2375 run --rm -dit --name webapp1 --hostname webapp1 -p 9000:80 umeshdocker1/pipelinetest2:v2'
+                sh 'docker -H tcp://10.1.3.231:2375 run --rm -dit --name webapp2 --hostname webapp2 -p 9100:80 umeshdocker1/pipelinetest2:v2'
              }
           }
           stage('check webapp rechability') {
              steps {
                 sh 'sleep 10s'
-                sh 'curl http://ec2-3-16-25-200.us-east-2.compute.amazonaws.com:9000'
+                sh 'curl http://ec2-3-16-25-200.us-east-2.compute.amazonaws.com:9100'
              }
           }
      }
