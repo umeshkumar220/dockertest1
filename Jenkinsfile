@@ -4,7 +4,7 @@ pipeline {
           stage('clone the git') {
              steps {
                 sh 'rm -rf dockertest1'
-                sh 'gitclone https://github.com/umeshkumar220/dockertest1.git'
+                sh 'git clone https://github.com/umeshkumar220/dockertest1.git'
              }
           }
           stage('build docker image') {
