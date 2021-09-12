@@ -11,7 +11,7 @@ pipeline {
              steps {
                 sh 'cd /var/lib/jenkins/workspace/pipeline1/dockertest1'
                 sh ' cp  /var/lib/jenkins/workspace/pipeline1/dockertest1/* /var/lib/jenkins/workspace/pipeline1'
-                sh 'docker build -t umeshdocker1/pipelinetest2:v2'
+                sh 'docker build -t umeshdocker1/pipelinetest2:v2 .'
              }
           }
           stage('push image to docker hub') {
