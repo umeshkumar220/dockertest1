@@ -3,7 +3,7 @@ pipeline {
       stages {
           stage('clone the git') {
              steps {
-                sh 'rm-rf dockertest1'
+                sh 'rm -rf dockertest1'
                 sh 'gitclone https://github.com/umeshkumar220/dockertest1.git'
              }
           }
